@@ -1,0 +1,539 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* tilpasset scroll, så når man trykker på menu links */
+html{
+    scroll-behavior: smooth;
+}
+
+/* tilpasset scroll bar (farven ændres) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(99, 140, 185);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(99, 140, 185);
+}
+
+/* max width på menubaren */
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;    
+    margin: auto;
+}
+/* media query til computer skærm */
+
+@media (max-width: 1920px){
+    
+/* navbar */ 
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 1s ease;
+    display: flex;
+}
+.navbar.sticky{
+    padding: 5px 0;
+    background-color: rgb(99, 140, 185);
+    background-size: 80%;
+    
+
+
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: rgb(14, 13, 13);
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+
+.logo img{
+    width:30%
+}
+
+ul{
+    display: inline-flex;
+    width: 70%;
+}
+
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: rgb(33, 29, 88);
+    font-size: 18px;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: rgb(0, 0, 0);
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+/* farven bag ved main farven på hele dokumentet */
+body{
+   
+    background-color: #89b3cf;  
+}
+
+/* big photo */
+
+#minheader{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#minheader::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5vw;
+    background: linear-gradient(to top, rgb(241, 241, 241),transparent);
+    z-index: 5;
+}
+
+#minheader img{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100vw;
+    
+
+}
+
+
+.mobil-minheader{
+    display: none;
+}
+
+/* tekst på big photo */
+#text{
+    position: absolute;
+    color: rgb(39, 35, 95);
+    font-size: 10vh;
+    text-align: center;
+    line-height: 0.55em;
+
+}
+
+ #text span{
+    font-size: 2vw;
+    letter-spacing: 2px;
+  
+
+}
+
+
+#text2{
+    position: relative;
+    color: rgb(47, 47, 51);
+    font-size: 5vh;
+    line-height: 1em;
+    text-align: center;
+    padding-bottom: 150px;
+    
+
+}
+
+ #text2 span{
+    font-size: 4vw;
+    letter-spacing: 2px;
+  
+
+}
+/* tekst under big photo */
+.sec{
+    position: relative;
+    padding: 200px;
+    background: rgb(241, 241, 241);
+    
+}
+
+.sec h2{
+    font-size: 3.5em;
+    color: rgb(60, 121, 190);
+    margin-bottom: 40px;
+}
+
+.sec h3{
+    font-size: 2em;
+    color: rgb(60, 121, 190);
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+}
+
+.sec p{
+    font-size: 2em;
+    color: rgb(99, 140, 185);
+}
+
+.sec h6{
+    font-size: 1em;
+    padding-top: 20px;
+    color: rgb(99, 140, 185);
+}
+
+.sec img{
+    background-color: #89b3cf;
+    height: 16vw;
+}
+
+
+/*farve på hele siden og section til konkurrence  */
+#banner{
+    display: block;
+    background: rgb(241, 241, 241);
+
+
+}
+/* billede af QR- kode og emballage */
+
+#banner img{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/billede-indeni.PNG);  
+    background-size: cover;
+    
+}
+/* billedet som bliver vist på mobil */
+.billede-underside-mobil{
+    display: none;
+}
+
+/* footer */
+#kontakt-os{
+    
+background-color: #89b3cf;
+padding-top: 0px;
+
+}
+
+
+#kontakt-os img{
+    display: block;
+    width: 100%;
+}
+
+#kontakt-os h1{
+    padding-top: 2%;
+    text-align: center;
+    font-size: 2vw;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+#kontakt-os p{
+    text-align: center;
+    font-size: 1.3vw;
+    color: rgba(0, 0, 0, 0.788);
+   font-weight: 600;
+}
+
+
+
+.kontakt-p{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.76);
+    cursor:inherit;
+    padding-bottom: 60px;
+}
+/* de ting som kan trykkes på i footer */
+.tryk{
+    color: rgb(104, 5, 5);
+}
+
+}
+
+/* menu knap styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: rgb(33, 29, 88);;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* media query */
+
+@media (max-width:1700px){
+    #minheader{
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+   
+}
+
+@media (max-width:1500px){
+    #minheader{
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    
+    }
+  
+}
+
+@media (max-width:1300px){
+    #minheader{
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        min-height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}
+
+@media (max-width:1100px){
+    #minheader{
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        min-height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}
+
+
+
+
+
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+        
+
+        }
+
+        .navbar .menu{
+            position: fixed;
+            height: 112vh;
+            width: 100%;
+            left: -100%;
+            top: 0;
+            background: #111;
+            text-align: center;
+            padding-top: 80px;
+            transition: all 0.3s ease;
+            display: flex;
+        flex-direction: column;
+        }
+        .navbar .menu.active{
+            left: 0;
+        }
+        .navbar .menu li{
+            display: block;
+            font-weight: 500
+    
+        }
+        .navbar .menu li a{
+            display: row;
+            margin: 20px 0;
+            font-size: 25px;
+            color: rgb(254, 254, 255);
+        }
+        .max-width{
+            max-width: 930px;
+        }
+       
+        #minheader{
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+                min-height: 50vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            
+            }
+            .logo img{
+                width:20%
+            }
+    
+    #kontakt-os h1{
+        padding-top: 2%;
+        text-align: center;
+        font-size: 3vw;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+    }
+    
+    #kontakt-os p{
+        text-align: center;
+        font-size: 2.3vw;
+        color: rgba(0, 0, 0, 0.788);
+       font-weight: 600;
+    }
+}
+
+
+    @media (max-width:800px){
+
+  
+        
+        #minheader img{
+            display: block;
+            
+        }
+
+        .mobil-minheader{
+            display: block;
+        }
+
+       
+
+       .billede-underside{
+           display: none;
+       }
+       
+
+        .billede-underside-mobil{
+            display: block;
+        }
+
+        
+
+        
+
+        .sec{
+            position: relative;
+            padding: 20px;
+            background: rgb(241, 241, 241);
+        }
+        
+        .sec h2{
+            font-size: 2em;
+            color: rgb(60, 121, 190);
+            margin-bottom: 40px;
+        }
+        
+        .sec p{
+            font-size: 1.5em;
+            color: rgb(99, 140, 185);
+        }
+
+        #banner{
+            display: block;
+            background: rgb(241, 241, 241);
+        height: 120px;
+        
+        }
+        #kontakt-os{
+    
+            background-color: #89b3cf;
+            padding-top: 350px;
+            
+            }
+
+        #kontakt-os h1{
+            padding-top: 2%;
+            text-align: center;
+            font-size: 5vw;
+            color: rgb(0, 0, 0);
+            font-weight: 600;
+        }
+        
+        #kontakt-os p{
+            text-align: center;
+            font-size: 3vw;
+            color: rgba(0, 0, 0, 0.788);
+           font-weight: 600;
+        }
+        
+
+    }
+

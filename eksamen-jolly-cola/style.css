@@ -1,0 +1,764 @@
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* tilpasset scroll, så når man trykker på menu links */
+html{
+    scroll-behavior: smooth;
+}
+
+/* tilpasset scroll bar (farven ændres) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(230, 13, 13);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(146, 62, 62);
+}
+
+/* max width på menubaren */
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;    
+    margin: auto;
+}
+
+/* media query til computer skærm */
+
+@media (max-width: 1920px){
+    
+/* navbar */
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 1s ease;
+    display: flex;
+}
+.navbar.sticky{
+    padding: 5px 0;
+    background-color: rgb(27, 27, 27);;
+    background-size: 80%;
+    
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: rgb(187, 3, 3);
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+
+.logo img{
+    width:30%
+}
+
+ul{
+    display: inline-flex;
+    width: 70%;
+}
+
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: rgb(0, 0, 0);
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+
+
+
+/* menu knappen */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: black;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+
+/* Headerbilledet */
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(195,195,195);
+background-image: linear-gradient(180deg,  rgba(143, 138, 138, 0.866) 0%, rgba(5, 5, 5, 0.521) 0%),url(images/baggrund-done.JPG); 
+    background-position: center;
+background-size: cover;
+position: relative;
+background-attachment: fixed;
+
+
+}
+
+.text-box{
+    width: 90%;
+    color: rgba(255, 255, 255, 0.774);
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-5%);
+    text-align: center;
+    
+}
+
+/*animeret tekst på headerbilledet  */
+
+.text-box h2{
+    font-family: 'Poppins', sans-serif;
+font-size: 60px;
+color: transparent;
+-webkit-text-stroke: 2px rgba(255, 255, 255, 0.418);
+background:  url(images/test2.PNG);
+-webkit-background-clip: text;
+background-position: 0 0;
+animation: back 300s linear infinite;
+
+}
+
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+      
+    
+    }
+}
+
+
+.text-box p{
+    margin: 50px 0 40px;
+
+    font-size: 14px;
+    color: aliceblue;
+    
+
+}
+
+/* styling af knappen som bliver brugt hele vejen igennem siden */
+
+.knap{
+    display: inline-block;
+    text-decoration: none;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+    padding: 20px 80px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-top: 40px;
+    border-radius: 10px;
+    
+}
+
+.knap:hover{
+    border: 1px solid rgba(247, 247, 247, 0.377);
+    background: rgba(173, 173, 173, 0.322);
+    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.74);
+}
+
+/* styling af link til undersiden */
+
+.image2{
+    
+    min-height: 50vh;
+    width: 100%;
+    background-position: center;
+background-size: cover;
+position: relative;
+height: 60vh;
+background-image: radial-gradient(circle, rgba(73, 73, 73, 0.582) 50%, rgba(0, 0, 0, 0.918) 100%),url(images/kampagner-test.PNG); 
+background-attachment: fixed;
+
+
+
+}
+
+.image2 h1{
+    padding-top: 5%;
+    text-align: center;
+    font-size: 48px;
+    color: black;
+}
+
+
+.image2:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    bottom: 0;
+    transition:  0.5s ease-out;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.349) 100%);
+    cursor: pointer;
+  }
+
+  .image2:hover:before {
+    height: 100%;
+  }
+
+  .image2-mobil{
+      display: none;
+  }
+
+  .text-box3{
+    width: 90%;
+    color: rgba(255, 255, 255, 0.774);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-5%);
+    text-align: center;
+    
+}
+
+.text-box3 h2{
+    font-family: 'Poppins', sans-serif;
+font-size: 60px;
+color: transparent;
+-webkit-text-stroke: 2px rgba(255, 255, 255, 0.418);
+background: linear-gradient(180deg,  rgba(143, 138, 138, 0.866) 0%, rgba(5, 5, 5, 0.13) 0%) ,url(images/test2.PNG);
+-webkit-background-clip: text;
+background-position: 0 0;
+animation: back 300s linear infinite;
+}
+
+.text-box2{
+    width: 90%;
+    color: rgba(255, 255, 255, 0.774);
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translate(-50%,-5%);
+    text-align: center;
+    
+}
+
+.text-box2 h2{
+    font-family: 'Poppins', sans-serif;
+font-size: 60px;
+color: transparent;
+-webkit-text-stroke: 2px rgba(255, 255, 255, 0.418);
+background:  url(images/test2.PNG);
+-webkit-background-clip: text;
+background-position: 0 0;
+animation: back 300s linear infinite;
+
+}
+
+/* Om jolly cola */
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0 0 20px 0 rgb(17, 17, 17) ;
+    width: 100%;
+    height: auto;
+    
+  }
+
+/* Næringsindhold */
+  .container2 {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0 0 20px 0 rgb(17, 17, 17) ;
+    width: 100%;
+    height: auto;
+    
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .image {
+    width: 100%;
+    height: auto;
+    width: 100vw;
+    
+  }
+
+  .image-mobil{
+      display: none;
+      background-color: rgb(27, 27, 27);
+  }
+  .text {
+    padding: 40px;
+    line-height: 1.5;
+  }
+
+.text h1{
+
+    font-size: 3vw;
+    color: rgb(255, 255, 255);
+    padding-right: 100px;
+    padding-top: 60px;
+}
+
+/* læs mere knappen */
+#more {
+    display: none;
+}
+/* -------------- */
+
+
+.container p{
+padding-top: 50px;
+color: rgb(187, 185, 185);
+font-size: 1.1vw;
+}
+
+.container2 p{
+    padding-top: 50px;
+    color: rgb(187, 185, 185);
+    font-size: 1.1vw;
+    }
+
+/* hover effekt læs mere */
+  .layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transition: 0.5s;
+    
+
+}
+
+.layer h3{
+width: 100%;
+font-weight:500;
+color: rgb(255, 255, 255);
+font-size: 26px;
+bottom: 0;
+text-align: center;
+position: absolute;
+opacity: 0;
+transition: 0.5s;
+
+}
+.layer:hover h3{
+    bottom: 20%;
+    opacity: 1;
+
+}
+
+/* footer */
+
+.image3{
+    
+    min-height: 50vh;
+    width: 100%;
+    background-position: center;
+background-size: cover;
+position: relative;
+height: 90vh;
+background-image: url(images/kontakt-billede.png); 
+background-attachment: fixed;
+
+
+
+}
+
+.image3 h1{
+    padding-top: 5%;
+    text-align: center;
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+}
+
+.image3 p{
+    
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.452);
+   padding-left: 20vw;
+}
+
+
+
+.kontakt-p{
+    color: rgba(255, 255, 255, 0.76);
+    cursor:inherit;
+}
+
+
+
+.tryk{
+    color: rgb(230, 64, 64);
+}
+
+
+}
+
+/* media query responsive*/
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+        
+
+        }
+        .header{
+            min-height: 100vh;
+            width: 100%;
+        background-image: linear-gradient(180deg,  rgba(143, 138, 138, 0.866) 0%, rgba(5, 5, 5, 0.521) 0%),url(images/baggrund-done.JPG); 
+            background-position: top;
+        background-size: cover;
+        position: relative;
+        background-attachment: fixed;
+        background-repeat: no-repeat ;
+        
+        
+        }
+
+
+
+        .knap{
+           
+            padding: 15px 60px;
+            font-size: 14px;
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(27, 27, 27);
+            box-shadow: 0 0 20px 0 rgb(17, 17, 17) ;
+            width: 100%;
+            height: 140vw;
+            display: inline-block;
+            text-align: center;
+            
+            
+          }
+
+          .container2 {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(27, 27, 27);
+            box-shadow: 0 0 20px 0 rgb(17, 17, 17) ;
+            width: 100%;
+            height: 140vw;
+            display: inline-block;
+            text-align: center;
+            
+            
+          }
+          img {
+            width: 100%;
+            height: auto;
+          }
+          
+          .image {
+            display: none;
+            
+          }
+        
+          .image-mobil{
+            display: block;
+            width: 100%;
+            padding-left: 80px;
+            padding-right: 80px;   
+            
+
+            } 
+
+          .image2-mobil{
+              display: block;   
+              height: 800px;
+              width: 800px;
+              background: rgb(195,195,195);
+          background-image:  linear-gradient(180deg,  rgba(143, 138, 138, 0.866) 0%, rgba(5, 5, 5, 0.521) 0%),url(images/mobil-kampagner.PNG); 
+              background-position: center;
+          background-size: cover;
+          position: relative;
+          background-attachment: fixed;
+
+             
+              
+        
+              
+          }
+
+          .mobil-billede{
+              box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+          }
+
+          .text {
+            display: block;
+          }
+        
+        .text h1{
+            font-size: 10vw;
+            color: rgb(255, 255, 255);
+            padding-right: 20px;
+            padding-top: 30px;
+        }
+        
+        
+        .container p{
+        padding-top: 20px;
+        color: rgb(187, 185, 185);
+        font-size: 3vw;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 30px;  
+        
+        }
+
+        .container2 p{
+            padding-top: 20px;
+            color: rgb(187, 185, 185);
+            font-size: 3vw;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 30px;  
+            
+            }
+        .web{
+            display: block;
+        }
+
+
+        
+
+    .image2{
+        display: none;
+    }
+
+    .image2-mobil{
+        display: block;
+        width: 100%;
+        height: 140vw;
+        
+
+    }
+
+   
+
+    
+
+    .text-box h2,
+    .text-box2 h2{
+    font-size: 35px;
+    
+    text-shadow: 0 5px 0px rgba(0, 0, 0, 0.219);
+
+    
+    
+    }
+    
+    .navbar .menu{
+        position: fixed;
+        height: 112vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+        display: flex;
+    flex-direction: column;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+        font-weight: 500
+
+    }
+    .navbar .menu li a{
+        display: row;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+   
+
+.image3{
+    min-height: 50vh;
+    width: 100%;
+    background-position: center;
+background-size: cover;
+position: relative;
+height: 100vh;
+background-image: url(images/kontakt-billede.png); 
+background-attachment: fixed;
+
+
+}
+}
+
+
+
+
+@media (max-width: 500px) {
+  
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
+
+@media (max-width: 487px) {
+
+    ul{
+        display: inline-flex;
+        width: 60%;
+        flex-direction: column;
+    }
+
+
+    .max-width{
+        padding: 0 23px;
+}
+.text h1{
+    font-size: 10vw;
+    color: rgb(255, 255, 255);
+    padding-right: 20px;
+    padding-top: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);;
+    box-shadow: 0 0 20px 0 rgb(17, 17, 17) ;
+    width: 100%;
+    height: 300vw;
+    display: inline-block;
+    text-align: center;
+
+
+}
+.container2 {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);;
+    box-shadow: 0 0 20px 0 rgb(17, 17, 17) ;
+    width: 100%;
+    height: 190vw;
+    display: inline-block;
+    text-align: center;
+
+
+}
+
+
+
+.container p{
+padding-top: 20px;
+color: rgb(187, 185, 185);
+font-size: 4.1vw;
+padding-left: 2.5px;
+padding-right: 5px;
+padding-top: 10px;  
+padding-bottom: 5px;
+}
+
+.container2 p{
+    color: rgb(187, 185, 185);
+    font-size: 4.5vw;
+    padding-left: 1px;
+    padding-right: 2px;
+    padding-top: 10px;  
+    padding-bottom: 5px;
+    }
+
+.image-mobil{
+    display: block;
+    width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;  
+}
+}
+
